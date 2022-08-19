@@ -12,7 +12,7 @@ COPY ./ ./
 RUN npm install
 #RUN npm rebuild
 # step 2.5: Configure the software
-   
+# EXPOSE  3000
 #step 3: Set default commands. List of command as strings aeparated by space
 CMD ["npm", "start"]
 

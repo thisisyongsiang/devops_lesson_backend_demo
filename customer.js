@@ -15,6 +15,17 @@ router.get("/customer/all", (request, response) => {
     }
   });
 });
+
+router.get("/", (request, response) => {
+  database.connection.all("select * from customer", (errors, results) => {
+    if (errors) {
+      response.status(500).send("Some error occurred");
+    } else {
+      response.status(200).send(results);
+    }
+  });
+});
+
 //Note: use query instead of all for MySQL - database.connection.query("select * from customer"
 
 // defines an API which takes id in the request and return the record in response
